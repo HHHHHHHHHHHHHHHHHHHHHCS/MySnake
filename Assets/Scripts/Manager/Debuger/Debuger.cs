@@ -223,7 +223,7 @@ public class Debuger
                     }
                     catch (Exception ex)
                     {
-                        Debuger.Internal_LogError(Debuger.Prefix + "获取 Application.persistentDataPath 报错！" + ex.Message, null);
+                        Debuger.Internal_LogError(Debuger.Prefix + "获取 Application.dataPath 报错！" + ex.Message, null);
                         return;
                     }
                 }
@@ -256,6 +256,8 @@ public class Debuger
                     {
                         Debuger.LogFileWriter.WriteLine(StackTraceUtility.ExtractStackTrace());
                     }
+                    Debuger.LogFileWriter.Dispose();
+                    Debuger.LogFileWriter = null;
                 }
                 catch (Exception)
                 {
