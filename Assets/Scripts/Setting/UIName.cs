@@ -15,6 +15,17 @@ public class UIName
     public const string login_loginButton = "LoginButton";
     #endregion
 
+    #region Login
+    public const string home_userInfo = "UserInfo";
+    public const string home_userAvatarImg = "UserAvatarMask/HeroAvatarImg";
+    public const string home_userNameText = "UserNameText";
+    public const string home_userLVText = "UserLVText";
+
+    public const string home_playButtonsBar = "PlayButtonsBar";
+    public const string home_endlessPVEButton = "EndlessPVEButton";
+    public const string home_timeLimitPVEButton = "TimeLimitPVEButton";
+    public const string home_pVPButton = "PVPButton";
+    #endregion
 
 
     #region TipWindow

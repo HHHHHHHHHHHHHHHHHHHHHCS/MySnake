@@ -13,7 +13,7 @@ public class UIManager : Instance_Base<UIManager>
 
     private void Start()
     {
-        Init();
+        //Init();
     }
 
 

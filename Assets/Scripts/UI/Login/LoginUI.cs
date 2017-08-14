@@ -19,17 +19,16 @@ public class LoginUI : UIBG_Base
         Transform loginPanel = root.Find(UIName.login_loginPanel);
         accountInput = loginPanel.Find(UIName.login_accountInput).GetComponent<InputField>();
         passwordInput = loginPanel.Find(UIName.login_passwordInput).GetComponent<InputField>();
-        loginPanel.Find(UIName.login_loginButton).GetComponent<Button>()
-            .onClick.AddListener(OnLogin);
+        AddButtonListener(loginPanel, UIName.login_loginButton, ClickLoginButton);
     }
 
-    private void OnLogin()
+    private void ClickLoginButton()
     {
-        //Debug.Log(accountInput.text + "   " + passwordInput.text);
-        //UIManager.Instance.JumpBG(UIName.prefab_homeBG);
-        var test = TipWindowUI.Create(UIManager.Instance.transform);
-        test.ChangeTitleText("title").ChangeContentText("content")
-            .ChangeButtonText("close").AddDeafultEvent();
+        Debug.Log("LoginUserInfo:" + accountInput.text + "   " + passwordInput.text);
+        UIManager.Instance.JumpBG(UIName.prefab_homeBG);
+        //var test = TipWindowUI.Create(UIManager.Instance.transform);
+        //test.ChangeTitleText("title").ChangeContentText("content")
+        //.ChangeButtonText("close").AddDeafultEvent();
 
     }
 }
