@@ -6,6 +6,7 @@ public class UIName
     public const string prefab_loginBG = res_ui + "/Login/LoginBG";
     public const string prefab_homeBG = res_ui + "/Home/HomeBG";
     public const string prefab_tipWindow = res_ui + "/Other/TipsWindow";
+    public const string prefab_Joystick = res_ui + "/Other/Joystick";
     #endregion
 
     #region Login

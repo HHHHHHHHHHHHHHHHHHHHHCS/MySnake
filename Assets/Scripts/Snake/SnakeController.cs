@@ -40,13 +40,11 @@ public class SnakeController : MonoBehaviour
         head.Init();
         snakeCtrl.NodeList.Add(head);
 
-
-
-        for(int i = 0;i<11;i++)
+        for (int i = 0; i < 11; i++)
         {
             snakeCtrl.CreateNode();
         }
-        
+
         return snakeCtrl;
     }
 
@@ -60,9 +58,10 @@ public class SnakeController : MonoBehaviour
 
         var node = Instantiate(prefab_snakeNode, transform);
         node.transform.localPosition = NodeList[NodeList.Count - 1].GetQuePos();
+        node.transform.localEulerAngles = NodeList[NodeList.Count - 1].GetQueRot();
+
         node.Init();
         NodeList.Add(node);
-
     }
 
     private void Update()
@@ -74,12 +73,17 @@ public class SnakeController : MonoBehaviour
     {
         if (NodeList != null)
         {
-            NodeList[0].transform.localPosition += NodeList[0].transform.up * walkSpeed * Time.deltaTime;
-            NodeList[0].AddSelfPos();
-            for(int i =1;i<NodeList.Count;i++)
+            for (int i = 0; i < NodeList.Count; i++)
             {
-                NodeList[i].transform.localPosition = NodeList[i - 1].GetQuePos();
-                NodeList[i].AddSelfPos();
+                if (i == 0)
+                {
+                    NodeList[0].transform.localPosition += NodeList[0].transform.up * walkSpeed * Time.deltaTime;
+                }
+                else
+                {
+                    NodeList[i].UpdatePosRot(NodeList[i - 1].GetQuePosRot());
+                }
+                NodeList[i].AddSelfPosRot();
             }
         }
 

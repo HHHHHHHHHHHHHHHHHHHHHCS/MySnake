@@ -12,6 +12,8 @@ public class JoystickEvent : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public VirtualJoystickEvent controlling;
     public UnityEvent endControl;
 
+
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         beginControl.Invoke();

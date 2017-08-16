@@ -24,7 +24,7 @@ public class UIManager : Instance_Base<UIManager>
 
     public void JumpBG(string path)
     {
-        if(nowBG!=null)
+        if (nowBG != null)
         {
             nowBG.DestroySelf();
         }
@@ -45,5 +45,13 @@ public class UIManager : Instance_Base<UIManager>
     public TipWindowUI CreateTipWindow()
     {
         return TipWindowUI.Create(transform);
+    }
+
+    public JoystickEvent CreateJoystick(Transform parent)
+    {
+
+        var jEvent = InstantiateObject<JoystickEvent>(UIName.prefab_Joystick);
+
+        return jEvent;
     }
 }

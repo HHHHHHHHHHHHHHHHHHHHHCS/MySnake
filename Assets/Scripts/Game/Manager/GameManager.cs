@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : Instance_Base<GameManager>
 {
+    private SnakeController mainPlayer;
 
     private void Awake()
     {
@@ -18,6 +19,6 @@ public class GameManager : Instance_Base<GameManager>
     public void StartGame()
     {
         MapManager.CreateMap();
-        SnakeController.CreateSnake();
+        mainPlayer = SnakeController.CreateSnake();
     }
 }
